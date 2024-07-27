@@ -37,7 +37,10 @@ $THEME->usefallback = true;
 $THEME->scss = function($theme) {
     return theme_boost_get_main_scss_content($theme);
 };
-
+//$PAGE->requires->js_call_amd('theme_boost/widget', 'init');
+$PAGE->requires->js_call_amd('theme_boost/widget', 'init',[[
+            'userId' => $USER->id,
+        ]]);
 
 $THEME->layouts = [
     // Most backwards compatible layout without the blocks.
